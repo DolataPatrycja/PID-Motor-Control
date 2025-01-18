@@ -10,4 +10,4 @@ Projekt mikroprocesorowego systemu sterowania prędkością silników DC
 
 #Piny w Nucleo
 1. PC8 - wypełnienie PWM
-2. 
+2. PE9 i PE11 - sygnały enkodera
