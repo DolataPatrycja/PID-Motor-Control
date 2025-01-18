@@ -1,52 +1,19 @@
-12:55:24 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
+17:14:42 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:111:11: warning: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |           ^~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:55: error: expected expression before ')' token
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |                                                       ^
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-12:55:42 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:111:11: warning: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |           ^~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:55: error: expected expression before ')' token
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |                                                       ^
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-12:57:00 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:111:11: warning: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |           ^~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:55: error: expected expression before ')' token
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |                                                       ^
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-12:57:10 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:111:11: warning: implicit declaration of function '_HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |           ^~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:111:55: error: expected expression before ')' token
-  111 |           _HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, )
-      |                                                       ^
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-13:00:42 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_hal_msp.d" -MT"Core/Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PID-Motor-Control.elf
+ 
+arm-none-eabi-size  PID-Motor-Control.elf 
+arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
+   text	   data	    bss	    dec	    hex	filename
+  17796	     12	   3108	  20916	   51b4	PID-Motor-Control.elf
+Finished building: default.size.stdout
+ 
+Finished building: PID-Motor-Control.list
+ 
+17:16:46 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -55,19 +22,12 @@ Finished building target: PID-Motor-Control.elf
 arm-none-eabi-size  PID-Motor-Control.elf 
 arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
    text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
+  17796	     12	   3108	  20916	   51b4	PID-Motor-Control.elf
 Finished building: default.size.stdout
  
 Finished building: PID-Motor-Control.list
  
-13:01:03 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-size  PID-Motor-Control.elf 
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-13:05:13 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
+17:25:54 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -76,246 +36,15 @@ Finished building target: PID-Motor-Control.elf
 arm-none-eabi-size  PID-Motor-Control.elf 
 arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
    text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
+  18108	     12	   3108	  21228	   52ec	PID-Motor-Control.elf
 Finished building: default.size.stdout
  
 Finished building: PID-Motor-Control.list
  
-13:05:51 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
+17:30:30 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
 arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
    text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
+  18108	     12	   3108	  21228	   52ec	PID-Motor-Control.elf
 Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:06:48 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:07:41 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:08:02 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:08:46 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:28:48 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:37:58 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:39:08 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:40:41 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:42:27 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:43:58 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:44:31 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:45:24 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:46:39 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:47:38 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-13:48:39 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
- 
-14:09:47 **** Incremental Build of configuration Debug for project PID-Motor-Control ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PID-Motor-Control.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Patrycja\Desktop\Studia\5 semestr\SM\PID-Motor-Control\PID-Motor-Control\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PID-Motor-Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PID-Motor-Control.elf
- 
-arm-none-eabi-size  PID-Motor-Control.elf 
-arm-none-eabi-objdump -h -S PID-Motor-Control.elf  > "PID-Motor-Control.list"
-   text	   data	    bss	    dec	    hex	filename
-  17120	     12	   3028	  20160	   4ec0	PID-Motor-Control.elf
-Finished building: default.size.stdout
- 
-Finished building: PID-Motor-Control.list
  
