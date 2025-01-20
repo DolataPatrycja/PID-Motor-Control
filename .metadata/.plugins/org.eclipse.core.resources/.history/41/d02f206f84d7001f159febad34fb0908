@@ -82,7 +82,7 @@ static void MX_TIM2_Init(void);
 
 void SetMotorDirection(int direction)
 {
-    if (direction < 0)
+    if (direction > 0)
     {
         // Obrót w prawo
         HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR1_PIN, GPIO_PIN_SET);
@@ -117,7 +117,7 @@ void SpeedCalculating(int direction)
 	}
 
 	last_encoder_position = encoder_position;
-	speed = (delta_position / 1920.0f) * 60.0f;
+	speed = (delta_position / 1920.0f) * 600.0f;
 }
 
 /* USER CODE END PFP */
@@ -177,20 +177,22 @@ int main(void)
 	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET) // Przycisk wciśnięty
 	  {
 	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
-	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
-	      {
-	          SetMotorDirection(1); // Obrót w prawo
-	          SpeedCalculating(1);
-	      }
+	      //if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
+	      //{
+	          //SetMotorDirection(1); // Obrót w prawo
+	          //SpeedCalculating(1);
+	      //}
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 	  }
 	  else
 	  {
 	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
-	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) != GPIO_PIN_RESET)
-	      {
-	          SetMotorDirection(-1); // Obrót w lewo
-	          SpeedCalculating(-1);
-	      }
+	      //if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) != GPIO_PIN_RESET)
+	      //{
+	          //SetMotorDirection(-1); // Obrót w lewo
+	          //SpeedCalculating(-1);
+	      //}
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 	  }
 
 
@@ -500,9 +502,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PC13 */
-  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Pin = USER_BUTTON_PIN;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RMII_MDC_Pin RMII_RXD0_Pin RMII_RXD1_Pin */

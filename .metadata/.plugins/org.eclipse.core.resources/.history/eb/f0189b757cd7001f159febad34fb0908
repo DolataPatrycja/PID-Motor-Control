@@ -35,14 +35,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define USER_BUTTON_PIN GPIO_PIN_13
-#define USER_BUTTON_PORT GPIOC
-
-#define MOTOR_DIR1_PIN GPIO_PIN_1
-#define MOTOR_DIR2_PIN GPIO_PIN_2
-#define MOTOR_PORT GPIOB
-
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -79,46 +71,6 @@ static void MX_TIM3_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-
-void SetMotorDirection(int direction)
-{
-    if (direction < 0)
-    {
-        // Obrót w prawo
-        HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR1_PIN, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR2_PIN, GPIO_PIN_RESET);
-    }
-    else
-    {
-        // Obrót w lewo
-        HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR1_PIN, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR2_PIN, GPIO_PIN_SET);
-    }
-}
-
-void SpeedCalculating(int direction)
-{
-	encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
-	delta_position = encoder_position - last_encoder_position;
-
-	if(direction > 0)
-	{
-		if (delta_position > 0)
-		{
-			delta_position -= 1920;
-		}
-	}
-	else
-	{
-		if (delta_position < 0)
-		{
-			delta_position += 1920;
-		}
-	}
-
-	last_encoder_position = encoder_position;
-	speed = (delta_position / 1920.0f) * 60.0f;
-}
 
 /* USER CODE END PFP */
 
@@ -174,25 +126,17 @@ int main(void)
   {
 	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 80);
 
-	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET) // Przycisk wciśnięty
+	  encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
+
+	  delta_position = encoder_position - last_encoder_position;
+
+	  if (delta_position < 0)
 	  {
-	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
-	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
-	      {
-	          SetMotorDirection(1); // Obrót w prawo
-	          SpeedCalculating(1);
-	      }
-	  }
-	  else
-	  {
-	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
-	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) != GPIO_PIN_RESET)
-	      {
-	          SetMotorDirection(-1); // Obrót w lewo
-	          SpeedCalculating(-1);
-	      }
+		  delta_position += 1920;
 	  }
 
+	  last_encoder_position = encoder_position;
+	  speed = (delta_position / 1920.0f) * 600.0f;
 
 	  sprintf(message, "%.2f\n", speed);
 	  HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), HAL_MAX_DELAY);
@@ -502,7 +446,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RMII_MDC_Pin RMII_RXD0_Pin RMII_RXD1_Pin */
