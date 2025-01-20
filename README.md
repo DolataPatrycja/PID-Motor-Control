@@ -11,3 +11,6 @@ Projekt mikroprocesorowego systemu sterowania prędkością silników DC
 #Piny w Nucleo
 1. PC8 - wypełnienie PWM
 2. PE9 i PE11 - sygnały enkodera
+3. PC13 - przycisk USER
+4. PB1 - obrót silników w prawo
+5. PB2 - obrót silników w lewo
