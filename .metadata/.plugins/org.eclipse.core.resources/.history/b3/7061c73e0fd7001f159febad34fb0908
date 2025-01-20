@@ -129,14 +129,8 @@ int main(void)
 	  encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
 
 	  delta_position = encoder_position - last_encoder_position;
-
-	  if (delta_position < 0)
-	  {
-		  delta_position += 1920;
-	  }
-
 	  last_encoder_position = encoder_position;
-	  speed = (delta_position / 1920.0f) * 600.0f;
+	  speed = (delta_position / 1919.0f) * 10.0f;
 
 	  sprintf(message, "%.2f\n", speed);
 	  HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), HAL_MAX_DELAY);

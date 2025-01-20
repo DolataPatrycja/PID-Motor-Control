@@ -56,9 +56,6 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 int32_t encoder_position;
 char message[50];
-int32_t last_encoder_position = 0;
-int32_t delta_position;
-float speed;
 
 /* USER CODE END PV */
 
@@ -124,23 +121,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 80);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 72);
 
 	  encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
-
-	  delta_position = encoder_position - last_encoder_position;
-
-	  if (delta_position < 0)
-	  {
-		  delta_position += 1920;
-	  }
-
-	  last_encoder_position = encoder_position;
-	  speed = (delta_position / 1920.0f) * 600.0f;
-
-	  sprintf(message, "%.2f\n", speed);
+	  sprintf(message, "%4i\n", encoder_position);
 	  HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), HAL_MAX_DELAY);
-	  HAL_Delay(100);
+	  HAL_Delay(1);
 
 
     /* USER CODE END WHILE */
