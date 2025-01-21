@@ -1397,10 +1397,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 75);
  8000ff4:	4b22      	ldr	r3, [pc, #136]	@ (8001080 <main+0xc0>)
  8000ff6:	681b      	ldr	r3, [r3, #0]
- 8000ff8:	2264      	movs	r2, #100	@ 0x64
+ 8000ff8:	224b      	movs	r2, #75	@ 0x4b
  8000ffa:	63da      	str	r2, [r3, #60]	@ 0x3c
 
 	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
@@ -1470,7 +1470,7 @@ int main(void)
 	  HAL_Delay(100);
  8001076:	2064      	movs	r0, #100	@ 0x64
  8001078:	f000 fe28 	bl	8001ccc <HAL_Delay>
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 75);
  800107c:	e7ba      	b.n	8000ff4 <main+0x34>
  800107e:	bf00      	nop
  8001080:	20000288 	.word	0x20000288
