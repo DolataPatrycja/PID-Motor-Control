@@ -1266,10 +1266,10 @@ void SpeedCalculating(int direction)
  8000f2a:	461a      	mov	r2, r3
  8000f2c:	4b1e      	ldr	r3, [pc, #120]	@ (8000fa8 <SpeedCalculating+0x8c>)
  8000f2e:	601a      	str	r2, [r3, #0]
-	delta_position = encoder_position - last_encoder_position;
- 8000f30:	4b1d      	ldr	r3, [pc, #116]	@ (8000fa8 <SpeedCalculating+0x8c>)
+	delta_position = last_encoder_position - encoder_position;
+ 8000f30:	4b1e      	ldr	r3, [pc, #120]	@ (8000fac <SpeedCalculating+0x90>)
  8000f32:	681a      	ldr	r2, [r3, #0]
- 8000f34:	4b1d      	ldr	r3, [pc, #116]	@ (8000fac <SpeedCalculating+0x90>)
+ 8000f34:	4b1c      	ldr	r3, [pc, #112]	@ (8000fa8 <SpeedCalculating+0x8c>)
  8000f36:	681b      	ldr	r3, [r3, #0]
  8000f38:	1ad3      	subs	r3, r2, r3
  8000f3a:	4a1d      	ldr	r2, [pc, #116]	@ (8000fb0 <SpeedCalculating+0x94>)
@@ -1317,7 +1317,7 @@ void SpeedCalculating(int direction)
  8000f70:	681b      	ldr	r3, [r3, #0]
  8000f72:	4a0e      	ldr	r2, [pc, #56]	@ (8000fac <SpeedCalculating+0x90>)
  8000f74:	6013      	str	r3, [r2, #0]
-	speed = (delta_position / 1920.0f) * 60.0f;
+	speed = (delta_position / 1920.0f) * 600.0f;
  8000f76:	4b0e      	ldr	r3, [pc, #56]	@ (8000fb0 <SpeedCalculating+0x94>)
  8000f78:	681b      	ldr	r3, [r3, #0]
  8000f7a:	ee07 3a90 	vmov	s15, r3
@@ -1339,7 +1339,7 @@ void SpeedCalculating(int direction)
  8000fac:	20000874 	.word	0x20000874
  8000fb0:	20000878 	.word	0x20000878
  8000fb4:	44f00000 	.word	0x44f00000
- 8000fb8:	42700000 	.word	0x42700000
+ 8000fb8:	44160000 	.word	0x44160000
  8000fbc:	2000087c 	.word	0x2000087c
 
 08000fc0 <main>:
@@ -1397,13 +1397,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 80);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
  8000ff4:	4b22      	ldr	r3, [pc, #136]	@ (8001080 <main+0xc0>)
  8000ff6:	681b      	ldr	r3, [r3, #0]
- 8000ff8:	2250      	movs	r2, #80	@ 0x50
+ 8000ff8:	2264      	movs	r2, #100	@ 0x64
  8000ffa:	63da      	str	r2, [r3, #60]	@ 0x3c
 
-	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET) // Przycisk wciśnięty
+	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
  8000ffc:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  8001000:	4821      	ldr	r0, [pc, #132]	@ (8001088 <main+0xc8>)
  8001002:	f001 f945 	bl	8002290 <HAL_GPIO_ReadPin>
@@ -1411,7 +1411,6 @@ int main(void)
  8001008:	2b00      	cmp	r3, #0
  800100a:	d10e      	bne.n	800102a <main+0x6a>
 	  {
-	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
 	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
  800100c:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  8001010:	481d      	ldr	r0, [pc, #116]	@ (8001088 <main+0xc8>)
@@ -1420,7 +1419,7 @@ int main(void)
  8001018:	2b00      	cmp	r3, #0
  800101a:	d116      	bne.n	800104a <main+0x8a>
 	      {
-	          SetMotorDirection(1); // Obrót w prawo
+	          SetMotorDirection(1);
  800101c:	2001      	movs	r0, #1
  800101e:	f7ff ff5b 	bl	8000ed8 <SetMotorDirection>
 	          SpeedCalculating(1);
@@ -1431,7 +1430,6 @@ int main(void)
 	  }
 	  else
 	  {
-	      //HAL_Delay(100); // Czekaj na stabilizację sygnału
 	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) != GPIO_PIN_RESET)
  800102a:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  800102e:	4816      	ldr	r0, [pc, #88]	@ (8001088 <main+0xc8>)
@@ -1440,7 +1438,7 @@ int main(void)
  8001036:	2b00      	cmp	r3, #0
  8001038:	d007      	beq.n	800104a <main+0x8a>
 	      {
-	          SetMotorDirection(-1); // Obrót w lewo
+	          SetMotorDirection(-1);
  800103a:	f04f 30ff 	mov.w	r0, #4294967295
  800103e:	f7ff ff4b 	bl	8000ed8 <SetMotorDirection>
 	          SpeedCalculating(-1);
@@ -1472,7 +1470,7 @@ int main(void)
 	  HAL_Delay(100);
  8001076:	2064      	movs	r0, #100	@ 0x64
  8001078:	f000 fe28 	bl	8001ccc <HAL_Delay>
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 80);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
  800107c:	e7ba      	b.n	8000ff4 <main+0x34>
  800107e:	bf00      	nop
  8001080:	20000288 	.word	0x20000288

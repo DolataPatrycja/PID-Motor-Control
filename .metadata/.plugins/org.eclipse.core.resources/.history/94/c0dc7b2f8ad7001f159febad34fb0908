@@ -99,7 +99,7 @@ void SetMotorDirection(int direction)
 void SpeedCalculating(int direction)
 {
 	encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
-	delta_position = last_encoder_position - encoder_position;
+	delta_position = encoder_position - last_encoder_position;
 
 	if(direction > 0)
 	{
@@ -117,7 +117,7 @@ void SpeedCalculating(int direction)
 	}
 
 	last_encoder_position = encoder_position;
-	speed = (delta_position / 1920.0f) * 600.0f;
+	speed = (delta_position / 1920.0f) * 60.0f;
 }
 
 /* USER CODE END PFP */

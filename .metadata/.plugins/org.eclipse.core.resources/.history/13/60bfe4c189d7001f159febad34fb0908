@@ -99,25 +99,25 @@ void SetMotorDirection(int direction)
 void SpeedCalculating(int direction)
 {
 	encoder_position = __HAL_TIM_GET_COUNTER(&htim1);
-	delta_position = last_encoder_position - encoder_position;
+	delta_position = encoder_position - last_encoder_position;
 
 	if(direction > 0)
 	{
-		if (delta_position > 0)
+		if (delta_position < 0)
 		{
 			delta_position -= 1920;
 		}
 	}
 	else
 	{
-		if (delta_position < 0)
+		if (delta_position > 0)
 		{
 			delta_position += 1920;
 		}
 	}
 
 	last_encoder_position = encoder_position;
-	speed = (delta_position / 1920.0f) * 600.0f;
+	speed = (delta_position / 1920.0f) * 60.0f;
 }
 
 /* USER CODE END PFP */
@@ -172,7 +172,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 74);
 
 	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
 	  {
