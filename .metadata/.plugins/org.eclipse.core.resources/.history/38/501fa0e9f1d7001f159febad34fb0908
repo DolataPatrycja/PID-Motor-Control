@@ -69,10 +69,10 @@ int32_t last_encoder_position = 0;
 int32_t delta_position;
 float speed;
 
-float set_speed = 31.0f;
-float kp = 0.3f;
-float ki = 0.5f;
-float kd = 0.1f;
+float set_speed = 0.0f;
+float kp = 0.5f;
+float ki = 0.1f;
+float kd = 0.05f;
 
 float error = 0.0f;
 float previous_error = 0.0f;
@@ -207,13 +207,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 75);
+
 	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
 	  {
 	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
 	      {
 	          SetMotorDirection(1);
 	          SpeedCalculating(1);
-	          new_PWM = PIDCalculating(set_speed, speed);
+	          new_PWM = PID_Compute(set_speed, speed);
 	      }
 	  }
 	  else
@@ -222,11 +224,11 @@ int main(void)
 	      {
 	          SetMotorDirection(-1);
 	          SpeedCalculating(-1);
-	          new_PWM = PIDCalculating(set_speed, speed);
+	          new_PWM = PID_Compute(set_speed, speed);
 	      }
 	  }
 
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, new_PWM);
+
 	  sprintf(message, "%.2f\n", speed);
 	  HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), HAL_MAX_DELAY);
 	  HAL_Delay(100);

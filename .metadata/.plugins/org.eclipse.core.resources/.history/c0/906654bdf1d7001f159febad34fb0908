@@ -24,7 +24,6 @@
 
 #include "string.h"
 #include "stdio.h"
-#include "math.h"
 
 /* USER CODE END Includes */
 
@@ -69,18 +68,6 @@ int32_t last_encoder_position = 0;
 int32_t delta_position;
 float speed;
 
-float set_speed = 31.0f;
-float kp = 0.3f;
-float ki = 0.5f;
-float kd = 0.1f;
-
-float error = 0.0f;
-float previous_error = 0.0f;
-float integral = 0.0f;
-float derivative = 0.0f;
-float new_PWM = 75.0f;
-
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,11 +84,13 @@ void SetMotorDirection(int direction)
 {
     if (direction < 0)
     {
+        // Obrót w prawo
         HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR1_PIN, GPIO_PIN_SET);
         HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR2_PIN, GPIO_PIN_RESET);
     }
     else
     {
+        // Obrót w lewo
         HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR1_PIN, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(MOTOR_PORT, MOTOR_DIR2_PIN, GPIO_PIN_SET);
     }
@@ -129,30 +118,6 @@ void SpeedCalculating(int direction)
 
 	last_encoder_position = encoder_position;
 	speed = (delta_position / 1920.0f) * 600.0f;
-}
-
-float PIDCalculating(float setpoint, float measured)
-{
-    error = setpoint - fabs(measured);
-
-    float proportional = kp * error;
-    integral += ki * error;
-    derivative = kd * (error - previous_error);
-
-    float output = proportional + integral + derivative;
-
-    if (output > 100.0f)
-    {
-    	output = 100.0f;
-    }
-    if (output < 0.0f)
-    {
-    	output = 0.0f;
-    }
-
-    previous_error = error;
-
-    return output;
 }
 
 /* USER CODE END PFP */
@@ -207,13 +172,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 75);
+
 	  if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
 	  {
 	      if (HAL_GPIO_ReadPin(USER_BUTTON_PORT, USER_BUTTON_PIN) == GPIO_PIN_RESET)
 	      {
 	          SetMotorDirection(1);
 	          SpeedCalculating(1);
-	          new_PWM = PIDCalculating(set_speed, speed);
 	      }
 	  }
 	  else
@@ -222,11 +188,10 @@ int main(void)
 	      {
 	          SetMotorDirection(-1);
 	          SpeedCalculating(-1);
-	          new_PWM = PIDCalculating(set_speed, speed);
 	      }
 	  }
 
-	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, new_PWM);
+
 	  sprintf(message, "%.2f\n", speed);
 	  HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), HAL_MAX_DELAY);
 	  HAL_Delay(100);
